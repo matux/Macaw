@@ -7,10 +7,10 @@
       buildImplicitDependencies = "YES">
       <BuildActionEntries>
          <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
+            buildForTesting = "NO"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
@@ -39,15 +39,6 @@
             </BuildableReference>
          </TestableReference>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "57FCD26B1D76EA4600CC0FB6"
-            BuildableName = "Macaw.framework"
-            BlueprintName = "Macaw"
-            ReferencedContainer = "container:Macaw.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -61,15 +52,6 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "57FCD26B1D76EA4600CC0FB6"
-            BuildableName = "Macaw.framework"
-            BlueprintName = "Macaw"
-            ReferencedContainer = "container:Macaw.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -79,15 +61,6 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "57FCD26B1D76EA4600CC0FB6"
-            BuildableName = "Macaw.framework"
-            BlueprintName = "Macaw"
-            ReferencedContainer = "container:Macaw.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
