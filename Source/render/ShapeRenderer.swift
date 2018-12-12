@@ -239,10 +239,10 @@ extension Stroke {
 extension Fill {
     func fillUsingAlphaOnly() -> Fill {
         if let color = self as? Color {
-            return color.colorUsingAlphaOnly()
+            return color.removingColors()
         }
         let gradient = self as! Gradient
-        let newStops = gradient.stops.map { Stop(offset: $0.offset, color: $0.color.colorUsingAlphaOnly()) }
+        let newStops = gradient.stops.map { Stop(offset: $0.offset, color: $0.color.removingColors()) }
         if let radial = self as? RadialGradient {
             return RadialGradient(cx: radial.cx, cy: radial.cy, fx: radial.fx, fy: radial.fy, r: radial.r, userSpace: radial.userSpace, stops: newStops)
         }
@@ -252,25 +252,14 @@ extension Fill {
 
     func fillUsingGrayscaleNoAlpha() -> Fill {
         if let color = self as? Color {
-            return color.toGrayscaleNoAlpha()
+            return color.desaturated()
         }
         let gradient = self as! Gradient
-        let newStops = gradient.stops.map { Stop(offset: $0.offset, color: $0.color.toGrayscaleNoAlpha()) }
+        let newStops = gradient.stops.map { Stop(offset: $0.offset, color: $0.color.desaturated()) }
         if let radial = self as? RadialGradient {
             return RadialGradient(cx: radial.cx, cy: radial.cy, fx: radial.fx, fy: radial.fy, r: radial.r, userSpace: radial.userSpace, stops: newStops)
         }
         let linear = self as! LinearGradient
         return LinearGradient(x1: linear.x1, y1: linear.y1, x2: linear.x2, y2: linear.y2, userSpace: linear.userSpace, stops: newStops)
-    }
-}
-
-extension Color {
-    func colorUsingAlphaOnly() -> Color {
-        return Color.black.with(a: Double(a()) / 255.0)
-    }
-
-    func toGrayscaleNoAlpha() -> Color {
-        let grey = Int(0.21 * Double(r()) + 0.72 * Double(g()) + 0.07 * Double(b()))
-        return Color.rgb(r: grey, g: grey, b: grey)
     }
 }

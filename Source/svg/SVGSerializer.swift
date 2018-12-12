@@ -187,20 +187,20 @@ open class SVGSerializer {
     }
 
     fileprivate func colorToSVG(_ color: Color) -> String {
-        if let c = SVGConstants.valueToColor(color.val) {
-            return "\(c)"
-        } else {
-            let r = color.r()
-            let g = color.g()
-            let b = color.b()
+//        if let c = SVGConstants.valueToColor(color.value) {
+//            return "\(c)"
+//        } else {
+            let r = color.r
+            let g = color.g
+            let b = color.b
             return "#\(String(format: "%02X%02X%02X", r, g, b))"
-        }
+//        }
     }
 
     fileprivate func fillToSVG(_ fill: Fill?) -> String {
         if let fillColor = fill as? Color {
             var result = " fill=\"\(colorToSVG(fillColor))\""
-            if let opacity = alphaToSVGOpacity(fillColor.a()) {
+            if let opacity = alphaToSVGOpacity(fillColor.a) {
                 result += " fill-opacity=\"\(opacity)\""
             }
             return result
@@ -219,7 +219,7 @@ open class SVGSerializer {
         var result = ""
         if let strokeColor = stroke?.fill as? Color {
             result += " stroke=\"\(colorToSVG(strokeColor))\""
-            if let opacity = alphaToSVGOpacity(strokeColor.a()) {
+            if let opacity = alphaToSVGOpacity(strokeColor.a) {
                 result += " stroke-opacity=\"\(opacity)\""
             }
         }

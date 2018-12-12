@@ -31,10 +31,10 @@ open class ColorMatrix {
     }
 
     public convenience init(color: Color) {
-        self.init(values: [0, 0, 0, 0, Double(color.r()) / 255.0,
-                           0, 0, 0, 0, Double(color.g()) / 255.0,
-                           0, 0, 0, 0, Double(color.b()) / 255.0,
-                           0, 0, 0, Double(color.a()) / 255.0, 0])
+        self.init(values: [0, 0, 0, 0, Double(color.r) / 255.0,
+                           0, 0, 0, 0, Double(color.g) / 255.0,
+                           0, 0, 0, 0, Double(color.b) / 255.0,
+                           0, 0, 0, Double(color.a) / 255.0, 0])
     }
 
     public convenience init(saturate: Double) {

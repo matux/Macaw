@@ -657,7 +657,7 @@
 		57E5E1501E3B393900D1CB28 /* MacawView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MacawView.swift; sourceTree = "<group>"; };
 		57E5E1521E3B393900D1CB28 /* ShapeLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShapeLayer.swift; sourceTree = "<group>"; };
 		57F108731F502A3600DC365B /* Touchable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Touchable.swift; sourceTree = "<group>"; };
-		57F108791F53C92000DC365B /* MDisplayLink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MDisplayLink.swift; path = Source/platform/MDisplayLink.swift; sourceTree = SOURCE_ROOT; };
+		57F108791F53C92000DC365B /* MDisplayLink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MDisplayLink.swift; path = Source/MDisplayLink.swift; sourceTree = SOURCE_ROOT; };
 		57F1087B1F53CA7E00DC365B /* MDisplayLink_iOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MDisplayLink_iOS.swift; path = Source/platform/iOS/MDisplayLink_iOS.swift; sourceTree = SOURCE_ROOT; };
 		57FCD26C1D76EA4600CC0FB6 /* Macaw.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Macaw.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		57FCD2761D76EA4600CC0FB6 /* MacawTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MacawTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1046,7 +1046,6 @@
 				57E5E0E11E3B393900D1CB28 /* animation */,
 				57E5E1051E3B393900D1CB28 /* bindings */,
 				57E5E1091E3B393900D1CB28 /* events */,
-				57E5E10F1E3B393900D1CB28 /* Info.plist */,
 				57E5E1101E3B393900D1CB28 /* model */,
 				585288F220AD96A2003E51D1 /* layout */,
 				57E5E13D1E3B393900D1CB28 /* render */,
@@ -1311,9 +1310,9 @@
 			isa = PBXGroup;
 			children = (
 				A718CD2C1F45BC5300966E06 /* Platform */,
-				57F108791F53C92000DC365B /* MDisplayLink.swift */,
 				572CEFC31E2CED4B008C7C83 /* Dependencies */,
 				57E5E0E01E3B393900D1CB28 /* Source */,
+				57E5E10F1E3B393900D1CB28 /* Info.plist */,
 			);
 			name = Macaw;
 			path = Source;
@@ -1545,6 +1544,7 @@
 			children = (
 				A718CD361F45BD0B00966E06 /* iOS */,
 				A718CD351F45BCF800966E06 /* macOS */,
+				57F108791F53C92000DC365B /* MDisplayLink.swift */,
 			);
 			name = Platform;
 			sourceTree = "<group>";

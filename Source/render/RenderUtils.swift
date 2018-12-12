@@ -74,7 +74,7 @@ class RenderUtils {
     }
 
     class func applyOpacity(_ color: Color, opacity: Double) -> Color {
-        return Color.rgba(r: color.r(), g: color.g(), b: color.b(), a: Double(color.a()) / 255.0 * opacity)
+        return color.with(a: opacity)
     }
 
     class func toCGPath(_ locus: Locus) -> CGPath {

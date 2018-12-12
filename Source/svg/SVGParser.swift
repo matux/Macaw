@@ -479,9 +479,9 @@ open class SVGParser {
             green *= 2.55
             blue *= 2.55
         }
-        return Color.rgb(r: Int(red.rounded(.up)),
-                         g: Int(green.rounded(.up)),
-                         b: Int(blue.rounded(.up)))
+        return Color(Int(red.rounded(.up)),
+                     Int(green.rounded(.up)),
+                     Int(blue.rounded(.up)))
     }
 
     fileprivate func parseTransformValues(_ values: String, collectedValues: [String] = []) -> [String] {
@@ -540,11 +540,11 @@ open class SVGParser {
         var rgbValue: UInt32 = 0
         Scanner(string: cleanedHexString).scanHexInt32(&rgbValue)
 
-        let red = CGFloat((rgbValue >> 16) & 0xff)
-        let green = CGFloat((rgbValue >> 08) & 0xff)
-        let blue = CGFloat((rgbValue >> 00) & 0xff)
+        let red = (rgbValue >> 16) & 0xff
+        let green = (rgbValue >> 08) & 0xff
+        let blue = (rgbValue >> 00) & 0xff
 
-        return Color.rgba(r: Int(red), g: Int(green), b: Int(blue), a: opacity)
+        return Color(red, green, blue, opacity * 255)
     }
 
     fileprivate func createColor(_ colorString: String, opacity: Double = 1) -> Color? {
@@ -553,7 +553,7 @@ open class SVGParser {
         }
         let opacity = min(max(opacity, 0), 1)
         if let defaultColor = SVGConstants.colorList[colorString] {
-            let color = Color(val: defaultColor)
+            let color = Color(defaultColor)
             return opacity != 1 ? color.with(a: opacity) : color
         }
         if colorString.hasPrefix("rgb") {
