@@ -14,10 +14,10 @@ import AppKit
 public extension Color {
 
     public func toCG() -> CGColor {
-        let red = CGFloat(Double(r) / 255.0)
-        let green = CGFloat(Double(g) / 255.0)
-        let blue = CGFloat(Double(b) / 255.0)
-        let alpha = CGFloat(Double(a) / 255.0)
+        let red = CGFloat(Double(r()) / 255.0)
+        let green = CGFloat(Double(g()) / 255.0)
+        let blue = CGFloat(Double(b()) / 255.0)
+        let alpha = CGFloat(Double(a()) / 255.0)
         return MColor(red: red, green: green, blue: blue, alpha: alpha).cgColor
     }
 
